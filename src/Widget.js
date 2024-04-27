@@ -9,7 +9,7 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const Widget = ({ widgets }) => {
   const [gridHeight, setGridHeight] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   const calculateWidth = () => {
@@ -28,7 +28,7 @@ const Widget = ({ widgets }) => {
     setIsLoading(true);
     const timeout = setTimeout(() => {
       setGridHeight(calculateGridHeight());
-      setIsLoading(true);
+      setIsLoading(false);
     }, 1000);
     return () => clearTimeout(timeout);
   }, [widgets]);
