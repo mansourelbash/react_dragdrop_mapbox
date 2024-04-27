@@ -73,6 +73,4 @@ To get started with this project, follow these steps:
 - React Grid Layout: React implementation of the Grid Layout specification for flexible layout arrangements.
 
 ## Contributors
-
 - [mansour-elbashabsheh](https://github.com/mansourelbash)
-
