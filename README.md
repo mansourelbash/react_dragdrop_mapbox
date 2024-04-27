@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Mapbox with React, Redux Toolkit, Redux Persist, and ApexCharts Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full demo showcasing the integration of various technologies to create an interactive map application with customizable widgets featuring charts. The main technologies used include React, Redux Toolkit, Redux Persist for local data persistence, Mapbox for mapping functionalities, Tailwind CSS for styling, and ApexCharts for chart visualization.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Interactive map powered by Mapbox, allowing users to navigate and interact with various locations.
+- Customizable widgets featuring charts for data visualization.
+- Drag-and-drop functionality for arranging and resizing widgets using React Grid Layout.
+- Data persistence using Redux Persist to save user preferences and widget configurations locally.
+- Responsive design with Tailwind CSS for a visually appealing and mobile-friendly user interface.
+- Skeleton loading effect for smooth user experience when adding new widgets.
+## Screenshots
 
-### `npm start`
+### Mapbox Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Mapbox Demo](public/screenshots/map.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Location Details
 
-### `npm test`
+![Location Details](public/screenshots/locationdetails.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Insert New Widget 
 
-### `npm run build`
+![Insert New Widget ](public/screenshots/insertwidget.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Mapbox Widget Skeleton
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Mapbox Widget Skeleton](public/screenshots/skeleton.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To get started with this project, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository to your local machine:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   git clone (https://github.com/mansourelbash/react_dragdrop_mapbox)
+   ```
 
-## Learn More
+2. Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   cd react_dragdrop_mapbox
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Start the development server:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Explore the map: Click on various locations on the map to view details about each location.
+2. Add widgets: Click on any point on the map to add a widget displaying charts related to that location.
+3. Customize widgets: Resize and rearrange widgets using drag-and-drop functionality provided by React Grid Layout.
+4. Persist data: Any changes made to the widgets' configurations or added charts will be automatically saved locally using Redux Persist.
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- React: JavaScript library for building user interfaces.
+- Redux Toolkit: Toolkit for efficient Redux development, providing simplified state management.
+- Redux Persist: Library for persisting Redux state to local storage.
+- Mapbox: Mapping platform for building custom map applications.
+- Tailwind CSS: Utility-first CSS framework for rapid UI development.
+- ApexCharts: Interactive JavaScript chart library for data visualization.
+- React Grid Layout: React implementation of the Grid Layout specification for flexible layout arrangements.
 
-### Advanced Configuration
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [mansour-elbashabsheh](https://github.com/mansourelbash)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
