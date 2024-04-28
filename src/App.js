@@ -4,7 +4,6 @@ function App() {
   return (
     <div>
     <JordanMap />
-    {/* <MapWithPopup /> */}
   </div>
   );
 }

@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import NewWidgetModal from './NewWidgetModal';
-import { useSelector } from 'react-redux'; 
-import Widget from './Widget'
-const Modal = ({ name, description, city, image, famousRestaurants, cafes, otherInfo, onClose }) => {
+import { useSelector, useDispatch } from 'react-redux';
+import { addWidget } from './actions/widgetActions'; 
+import Widget from './Widget';
+
+const Modal = ({id, name, description, city, image, famousRestaurants, cafes, otherInfo, onClose }) => {
   const modalRef = useRef(null);
   const [modalClass, setModalClass] = useState('modal-content');
   const [newWidgetModalOpen, setNewWidgetModalOpen] = useState(false);
   const [sectionName, setSectionName] = useState('');
   const [chartType, setChartType] = useState('');
-  const widgets = useSelector((state) => state.modal.modalData);
-
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -40,11 +41,7 @@ const Modal = ({ name, description, city, image, famousRestaurants, cafes, other
   };
 
   const handleConfirmWidget = () => {
-    const newWidget = {
-      sectionName,
-      chartType,
-    };
-    setWidgets([...widgets, newWidget]);
+    dispatch(addWidget({ sectionName, chartType }));
     closeNewWidgetModal();
   };
 
@@ -89,11 +86,9 @@ const Modal = ({ name, description, city, image, famousRestaurants, cafes, other
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4" onClick={openNewWidgetModal}>Insert New Widget</button>
         </div>
 
-
-        <Widget widgets={widgets} />
+          <Widget locationId={id} locationName={name} />
 
       </div>
-
 
       {newWidgetModalOpen && (
         <NewWidgetModal
@@ -101,6 +96,8 @@ const Modal = ({ name, description, city, image, famousRestaurants, cafes, other
           onConfirm={handleConfirmWidget}
           setSectionName={setSectionName}
           setChartType={setChartType}
+          locationId={id}
+          locationName={name}
         />
       )}
     </div>

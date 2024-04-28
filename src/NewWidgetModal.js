@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
-import { AiOutlineClose } from 'react-icons/ai'; // Importing the close icon
-import { createModal, closeModal } from './modalSlice';
+import { AiOutlineClose } from 'react-icons/ai'; 
+import { addWidget } from './widgetSlice'; 
 import { useDispatch } from 'react-redux';
 import getChartData from './chartUtils';
 
-const NewWidgetModal = ({ onConfirm, onClose }) => {
+const NewWidgetModal = ({ onClose, locationId, locationName }) => {
   const [sectionName, setSectionName] = useState('');
   const [chartType, setChartType] = useState('line');
   const [error, setError] = useState('');
@@ -17,16 +17,14 @@ const NewWidgetModal = ({ onConfirm, onClose }) => {
       return;
     }
     const { series, options, height } = getChartData(chartType);
-    dispatch(createModal({ sectionName, chartType, chartData: { series, options, height } }));
+    const widgetData = { series, options, height };
+    const widgetPayload = { locationId, locationName, sectionName, chartType, chartData: widgetData };
+    dispatch(addWidget(widgetPayload));
     onClose();
   };
 
   const handleChangeChartType = (e) => {
     setChartType(e.target.value);
-  };
-
-  const stopPropagation = (e) => {
-    e.stopPropagation();
   };
 
   const renderChartPreview = () => {
@@ -129,7 +127,7 @@ const NewWidgetModal = ({ onConfirm, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={onClose}>
       <div className="modal-overlay fixed inset-0 bg-gray-900 opacity-50"></div>
-      <div className="modal-content modal-new-content bg-white rounded-lg p-8 w-full max-w-md" onClick={stopPropagation}>
+      <div className="modal-content modal-new-content bg-white rounded-lg p-8 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
         <h2 className="text-2xl font-bold mb-4">Insert New Widget</h2>
         <div className="absolute right-5 top-5 mt-2 ml-2">
           <AiOutlineClose className="text-gray-500 cursor-pointer" onClick={onClose} />

@@ -47,3 +47,8 @@ code {
   border: none;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .modal-overlay {
+    width: 100%; /* Set width to 100% on mobile devices */
+  }
+}
